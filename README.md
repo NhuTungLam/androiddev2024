@@ -12,5 +12,5 @@ Student Info
 
 * Name: Nhữ Tùng Lâm
 * ID: Bi12-233
-* Group ID:16
+* Group ID:11
 * Project Name: *Your Project Name here*
