@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -16,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        ForecastFragment f = new ForecastFragment();
 
+        // Add the fragment to the 'container' FrameLayout
+        getSupportFragmentManager().beginTransaction().add(R.id.container, f).commit();
         // Initialize the TextView so we can manipulate it later
-        TextView mTextView = (TextView) findViewById(R.id.text_view);
+        TextView mTextView =  findViewById(R.id.text_view);
 
         // Set text to the TextView
-        mTextView.setText("Hello World!");
+        mTextView.setText("");
         Log.i(TAG, "onCreate() called");
     }
 
