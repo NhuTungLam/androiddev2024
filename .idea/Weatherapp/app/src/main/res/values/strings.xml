@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">USTH WEATHER</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="monday">Monday</string>
-    <string name="usth_weather">USTH Weather</string>
-    <string name="todays_weather">Today Weather</string>
-</resources>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         // Add the fragment to the 'container' FrameLayout
         getSupportFragmentManager().beginTransaction().add(R.id.container, f).commit();
         // Initialize the TextView so we can manipulate it later
-        TextView mTextView =  findViewById(R.id.text_view);
-
+        //TextView mTextView =findViewById(R.id.text_view);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Set text to the TextView
-        mTextView.setText("");
+        //mTextView.setText("");
         Log.i(TAG, "onCreate() called");
     }
 
