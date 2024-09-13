@@ -6,6 +6,12 @@ import android.util.Log;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
+import vn.edu.usth.usthweather.adapter.HomeFragmentPagerAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,15 +22,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        ForecastFragment f = new ForecastFragment();
-        // Add the fragment to the 'container' FrameLayout
-        getSupportFragmentManager().beginTransaction().add(R.id.forecast_fragment, f).commit();
-        WeatherFragment f1 = new WeatherFragment();
-        // Add the fragment to the 'container' FrameLayout
-        getSupportFragmentManager().beginTransaction().add(R.id.weather_fragment, f1).commit();
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        Log.i(TAG, "onCreate() called");
+        // Setup ViewPager và TabLayout
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
     }
 
     @Override

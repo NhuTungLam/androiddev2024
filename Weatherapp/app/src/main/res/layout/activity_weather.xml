@@ -14,22 +14,18 @@
         android:background="#2196F3"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:title="@string/usth_weather" />
-    <fragment
-        android:id="@+id/weather_fragment"
-        android:name="vn.edu.usth.usthweather.WeatherFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
 
-
-    <!-- ForecastFragment -->
-    <fragment
-        android:id="@+id/forecast_fragment"
-        android:name="vn.edu.usth.usthweather.ForecastFragment"
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="wrap_content"/>
+
+    <!-- ViewPager -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>
