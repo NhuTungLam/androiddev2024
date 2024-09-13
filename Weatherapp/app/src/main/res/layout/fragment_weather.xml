@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#50FF99"
+    android:id="@+id/weather_fragment"
+    tools:context=".WeatherFragment">
+
+
+    <ImageView
+        android:id="@+id/text_weather_info"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/image"
+        android:src="@drawable/cloud"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paris"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/text_weather_info"
+        android:id="@+id/text_paris" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/temperature"
+        android:text="@string/sunny"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_25_c"
+        android:layout_below="@+id/temperature"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+</RelativeLayout>
+

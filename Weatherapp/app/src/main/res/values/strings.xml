@@ -4,4 +4,11 @@
     <string name="monday">Monday</string>
     <string name="usth_weather">USTH Weather</string>
     <string name="todays_weather">Today Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image">image</string>
+    <string name="paris">Paris</string>
+    <string name="_25_c">25°C</string>
+    <string name="_18_c">18°C</string>
+    <string name="sunny">sunny</string>
 </resources>

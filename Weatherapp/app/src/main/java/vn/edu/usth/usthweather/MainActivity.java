@@ -17,15 +17,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         ForecastFragment f = new ForecastFragment();
-
         // Add the fragment to the 'container' FrameLayout
-        getSupportFragmentManager().beginTransaction().add(R.id.container, f).commit();
-        // Initialize the TextView so we can manipulate it later
-        //TextView mTextView =findViewById(R.id.text_view);
+        getSupportFragmentManager().beginTransaction().add(R.id.forecast_fragment, f).commit();
+        WeatherFragment f1 = new WeatherFragment();
+        // Add the fragment to the 'container' FrameLayout
+        getSupportFragmentManager().beginTransaction().add(R.id.weather_fragment, f1).commit();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // Set text to the TextView
-        //mTextView.setText("");
         Log.i(TAG, "onCreate() called");
     }
 

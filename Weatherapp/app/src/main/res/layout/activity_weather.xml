@@ -14,47 +14,22 @@
         android:background="#2196F3"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:title="@string/usth_weather" />
-
-    <!-- Nội dung khác của layout -->
-    <LinearLayout
+    <fragment
+        android:id="@+id/weather_fragment"
+        android:name="vn.edu.usth.usthweather.WeatherFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="30dp"
-        android:background="#992196F3"
-        android:orientation="vertical"
-        android:padding="30dp">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
-        <!-- Example forecast content -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/todays_weather"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Sunny, 25°C"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Other content goes here..."
-            android:textSize="20sp" />
-
-        <!-- FrameLayout với kích thước đã chỉnh sửa -->
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-    </LinearLayout>
-
+    <!-- ForecastFragment -->
+    <fragment
+        android:id="@+id/forecast_fragment"
+        android:name="vn.edu.usth.usthweather.ForecastFragment"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
 </LinearLayout>
-
