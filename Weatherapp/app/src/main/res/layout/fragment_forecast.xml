@@ -16,10 +16,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Mon"
+            android:text="@string/monday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -55,10 +55,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Tue"
+            android:text="@string/Tuesday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -94,10 +94,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Wed"
+            android:text="@string/Wednesday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -132,10 +132,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Thu"
+            android:text="@string/Thursday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -171,10 +171,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Fri"
+            android:text="@string/Friday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -210,10 +210,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Sat"
+            android:text="@string/Saturday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>
@@ -249,10 +249,10 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/weight_listday"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Sun"
+            android:text="@string/Sunday"
             android:textSize="18sp"
             android:textColor="#000000"
             android:layout_gravity="center"/>

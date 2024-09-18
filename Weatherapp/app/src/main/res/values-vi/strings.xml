@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tên ứng dụng</string>
+    <string name="monday">Thứ Hai</string>
+    <string name="Tuesday">Thứ Ba</string>
+    <string name="Wednesday">Thứ Tư</string>
+    <string name="Thursday">Thứ Năm</string>
+    <string name="Friday">Thứ Sáu</string>
+    <string name="Saturday">Thứ Bảy</string>
+    <string name="Sunday">Chủ Nhật</string>
+    <string name="sunny">Trời nắng</string>
+</resources>

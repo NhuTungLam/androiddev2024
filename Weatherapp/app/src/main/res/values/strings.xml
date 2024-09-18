@@ -11,4 +11,10 @@
     <string name="_25_c">25°C</string>
     <string name="_18_c">18°C</string>
     <string name="sunny">sunny</string>
+    <string name="Tuesday">Tuesday</string>
+    <string name="Wednesday">Wednesday</string>
+    <string name="Friday">Friday</string>
+    <string name="Sunday">Sunday</string>
+    <string name="Thursday">Thursday</string>
+    <string name="Saturday">Saturday</string>
 </resources>

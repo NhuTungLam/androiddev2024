@@ -12,10 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.tabs.TabLayout;
-
-import vn.edu.usth.usthweather.adapter.HomeFragmentPagerAdapter;
-
 public class WeatherAndForecastFragment extends Fragment {
 
     public static  WeatherAndForecastFragment newInstance() {
