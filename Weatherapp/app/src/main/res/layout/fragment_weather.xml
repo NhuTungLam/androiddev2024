@@ -3,17 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="#50FF99"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/frame"
     android:id="@+id/weather_fragment"
     tools:context=".WeatherFragment">
 
 
     <ImageView
         android:id="@+id/text_weather_info"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
         android:layout_centerInParent="true"
         android:contentDescription="@string/image"
+        app:tint="@color/main_icon_color"
         android:src="@drawable/cloud"
         android:textColor="@color/black"/>
 
@@ -29,21 +32,25 @@
         android:id="@+id/text_paris" />
 
     <TextView
+        android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/temperature"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="19dp"
         android:text="@string/sunny"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"/>
+        android:textSize="18sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_25_c"
         android:layout_below="@+id/temperature"
+        android:layout_marginStart="42dp"
+        android:text="@string/_25_c"
         android:textColor="@color/black"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
 </RelativeLayout>
 

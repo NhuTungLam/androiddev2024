@@ -6,9 +6,7 @@
         android:id="@+id/weather_fragment"
         android:name="vn.edu.usth.usthweather.WeatherFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="wrap_content"/>
 
 
     <!-- ForecastFragment -->
@@ -16,7 +14,5 @@
         android:id="@+id/forecast_fragment"
         android:name="vn.edu.usth.usthweather.ForecastFragment"
         android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_height="380dp"/>
 </LinearLayout>
