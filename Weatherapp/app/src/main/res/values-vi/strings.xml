@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tên ứng dụng</string>
+    <string name="app_name">USTH WEATHER</string>
     <string name="monday">Thứ Hai</string>
     <string name="Tuesday">Thứ Ba</string>
     <string name="Wednesday">Thứ Tư</string>
