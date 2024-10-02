@@ -5,6 +5,9 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -32,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 2;
     private static final int REQUEST_READ_MEDIA_AUDIO = 3;
+    private final Handler handler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            // This method is executed in the main thread
+            String content = msg.getData().getString("server_response");
+            Toast.makeText(MainActivity.this, content, Toast.LENGTH_SHORT).show();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
-        // Check for permission based on API level
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_AUDIO)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -80,18 +90,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private void copyAndPlayMusic() {
         try {
-            // Get the InputStream from assets
             InputStream is = getAssets().open("weather.mp3");
-
-            // Create a File in the app's external files directory
             File musicFile = new File(getExternalFilesDir(null), "weather.mp3");
-
-            // Copy the file
             copyFile(is, musicFile);
 
-            // Play the music
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setDataSource(musicFile.getAbsolutePath());
             mediaPlayer.prepare();
@@ -111,27 +116,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     @Override
     protected void onPause() {
         super.onPause();
-        // Dừng nhạc khi ứng dụng không còn hoạt động
         if (mediaPlayer != null) {
-            mediaPlayer.pause(); // Tạm dừng phát nhạc
+            mediaPlayer.pause();
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Tiếp tục phát nhạc khi vào lại ứng dụng
-        if (mediaPlayer != null ) {
-            mediaPlayer.start(); // Tiếp tục phát nhạc
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
         }
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Release MediaPlayer resources
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
@@ -150,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_refresh) {
             Toast.makeText(this, "Refresh clicked", Toast.LENGTH_SHORT).show();
+            startNetworkSimulation(); // Start the network simulation on refresh click
             return true;
         } else if (id == R.id.action_settings) {
             Intent intent = new Intent(this, PrefActivity.class);
@@ -158,5 +163,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startNetworkSimulation() {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "Sample JSON response from the server");
+
+                // Send the data back to the main thread
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+            }
+        });
+        t.start();
     }
 }
